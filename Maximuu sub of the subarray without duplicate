@@ -1,0 +1,44 @@
+import java.util.*;
+public class Main
+{
+    public static int maxSub(int arr[],int k){
+        	    int sum=0;
+        	    
+        for(int i=0;i<k;i++){
+	        sum+=arr[i]; 
+	    }
+        int Max=sum;
+	    for(int i=k;i<arr.length;i++){
+	        sum=sum+arr[i]-arr[i-k];
+	        Max=Math.max(Max,sum);
+	    }
+	    return Max;
+    }
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	    int n=scan.nextInt();
+	    int arr[]=new int[n];
+	    for(int i=0;i<n;i++){
+	        arr[i]=scan.nextInt();
+	    }
+	    LinkedHashSet<Integer> set = new LinkedHashSet<>();
+	    for(int x:arr){
+	        set.add(x);
+	    }
+	    int arr2[]=new int[set.size()];
+	    int ss=0;
+	    for(int x:set){
+	        arr2[ss]=x;
+	        ss++;
+	    }
+	    int k=scan.nextInt();
+	    if(arr.length>=k){
+	        int res=maxSub(arr2,k);
+	        System.out.println("Max element : "+res);
+
+	    }
+	    else{
+	        System.out.println("Invalid input array or window size!");
+	    }
+	}
+}
