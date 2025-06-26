@@ -1,0 +1,24 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int t=scan.nextInt();
+		int[] arr1=new int[t];
+		int[] arr2= new int[t];
+		for(int i=0;i<t;i++){
+		    arr1[i]=scan.nextInt();
+		}
+		for(int i=0;i<t;i++){
+		    arr2[i]=scan.nextInt();
+		}
+		int sum=0;
+		int eve=0;
+		for(int i=0;i<t;i++){
+		    eve+=arr1[i];
+		    eve-=arr2[i];
+		    sum=Math.max(sum,eve);
+		}
+		System.out.println(sum);
+	}
+}
