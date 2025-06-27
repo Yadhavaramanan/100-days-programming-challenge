@@ -1,0 +1,19 @@
+import java.util.*;
+public class Main
+{
+    public static int res(int n){
+        int h=n/2;
+        int v=n-h;
+        return (h+1)*(v+1);
+    }
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	    int a=scan.nextInt();
+	    if(a==1){
+	        System.out.println(2);
+	    }
+	    else{
+	        System.out.println(res(a));
+	    }
+	}
+}

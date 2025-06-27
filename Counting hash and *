@@ -1,0 +1,14 @@
+import java.util.*;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner scan = new Scanner(System.in);
+	    String s=scan.nextLine();
+	    HashMap<Character,Integer> map=new HashMap<>();
+	    for(char x:s.toCharArray()){
+	        map.put(x,map.getOrDefault(x,0)+1);
+	    }
+	    
+	    System.out.println(map.get('*')-map.get('#'));
+	}
+}

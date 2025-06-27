@@ -1,0 +1,26 @@
+public class Main
+{
+    static int[] insertionsort(int[] arr){
+        int step=0;
+        for(int i=1;i<arr.length;i++){
+            int j=i-1;
+            int key=arr[i];
+            while(j>=0 && arr[j]>key){
+                arr[j+1]=arr[j];
+                j--;
+                step++;
+        }
+        arr[j+1]=key;
+     }
+     System.out.println(step);
+     return arr;
+    }
+	public static void main(String[] args) {
+      
+        int[] arr={2,3,5,1,4,9,8,7};
+	    int[] res=insertionsort(arr);
+	    for(int i=0;i<res.length;i++){
+	        System.out.print(res[i]+" ");
+	    }
+}
+}
